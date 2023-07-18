@@ -1,28 +1,1377 @@
 {
-  "waterAnimal": "Angel Fish",
-  "landAnimal": "Giraffe",
-  "colors": [
-    {
-      "name": "red",
-      "shading": "dark"
-    },
-    {
-      "name": "green",
-      "shading": "light"
-    },
-    {
-      "name": "blue",
-      "shading": "deep"
-    }
-  ],
-  "cost": {
-    "dollars": {
-      "primary": "Fifty",
-      "tax": "Ten"
-    },
-    "euros": {
-      "primary": "Forty Two",
-      "tax": "Eight"
-    }
+  "template": {
+    "id": 1,
+    "modules": [
+      {
+        "id": 2,
+        "key": "RC2",
+        "home": true,
+        "name": "Reference Number Capture 2",
+        "reference_entry": {
+          "id": 3,
+          "prompt": "Enter Unit or Reference Number"
+        },
+        "keyboard_autocapitalization_type": "all_letters"
+      },
+      {
+        "id": 4,
+        "key": "M1",
+        "name": "Media Capture Module 1",
+        "instructions": [
+          {
+            "id": 5,
+            "label": "Take photos of all attachments (if applicabale)",
+            "autonav": true,
+            "auto_advance": false
+          },
+          {
+            "id": 6,
+            "label": "Front",
+            "autonav": true,
+            "auto_advance": true
+          },
+          {
+            "id": 7,
+            "label": "Front Left Corner",
+            "autonav": true,
+            "auto_advance": true
+          },
+          {
+            "id": 8,
+            "label": "Left Side",
+            "autonav": true,
+            "auto_advance": true
+          },
+          {
+            "id": 9,
+            "label": "Left Track",
+            "autonav": true,
+            "auto_advance": true
+          },
+          {
+            "id": 10,
+            "label": "Rear Left Corner",
+            "autonav": true,
+            "auto_advance": true
+          },
+          {
+            "id": 11,
+            "label": "Rear",
+            "autonav": true,
+            "auto_advance": true
+          },
+          {
+            "id": 12,
+            "label": "Rear Track",
+            "autonav": true,
+            "auto_advance": true
+          },
+          {
+            "id": 13,
+            "label": "Rear Right Corner",
+            "autonav": true,
+            "auto_advance": true
+          },
+          {
+            "id": 14,
+            "label": "Right Side",
+            "autonav": true,
+            "auto_advance": true
+          },
+          {
+            "id": 15,
+            "label": "Front Right Corner",
+            "autonav": true,
+            "auto_advance": true
+          },
+          {
+            "id": 16,
+            "label": "Serial Number Plate",
+            "autonav": true,
+            "auto_advance": true
+          },
+          {
+            "id": 17,
+            "label": "Inside Cab",
+            "autonav": true,
+            "auto_advance": true
+          },
+          {
+            "id": 18,
+            "label": "Hourmeter",
+            "autonav": true,
+            "auto_advance": true
+          }
+        ],
+        "tab_bar_item": {
+          "id": 19,
+          "url": "",
+          "title": "Record360",
+          "image_name": "R360icon.png"
+        },
+        "photo_button_primary": true
+      },
+      {
+        "id": 20,
+        "key": "N2",
+        "name": "Notations Module 2",
+        "notations": [
+          {
+            "id": 21,
+            "rank": 1,
+            "title": "Broken",
+            "autonav": true
+          },
+          {
+            "id": 22,
+            "rank": 2,
+            "title": "Damage",
+            "autonav": true
+          },
+          {
+            "id": 23,
+            "rank": 3,
+            "title": "Dent",
+            "autonav": true
+          },
+          {
+            "id": 24,
+            "rank": 4,
+            "title": "Hole",
+            "autonav": true
+          },
+          {
+            "id": 25,
+            "rank": 5,
+            "title": "Missing",
+            "autonav": true
+          },
+          {
+            "id": 26,
+            "rank": 6,
+            "title": "Paint Chip",
+            "autonav": true
+          },
+          {
+            "id": 27,
+            "rank": 7,
+            "title": "Prior",
+            "autonav": true
+          },
+          {
+            "id": 28,
+            "rank": 8,
+            "title": "Torn",
+            "autonav": true
+          },
+          {
+            "id": 29,
+            "rank": 9,
+            "title": "Other",
+            "autonav": false
+          }
+        ],
+        "tab_bar_item": {
+          "id": 30,
+          "url": "",
+          "title": "Notations",
+          "image_name": "notation.png"
+        },
+        "allowmultiselect": true
+      },
+      {
+        "id": 31,
+        "key": "LB1",
+        "name": "Logic Branch 1",
+        "logic_branch": {
+          "id": 32,
+          "prompt": "You have entered an existing Unit or Reference Number. Do you want to Update this record, apply a Return to this record or start a new Checkout record?",
+          "values": [
+            {
+              "id": 33,
+              "value": "true",
+              "action": "DD1"
+            },
+            {
+              "id": 34,
+              "value": "false",
+              "action": "M1"
+            }
+          ],
+          "options": [
+            {
+              "id": 35,
+              "label": "Update",
+              "value": null
+            },
+            {
+              "id": 36,
+              "label": "Return",
+              "value": true
+            },
+            {
+              "id": 37,
+              "label": "Checkout",
+              "value": false
+            }
+          ],
+          "variable": "{RETURN}"
+        }
+      },
+      {
+        "id": 38,
+        "key": "LB2",
+        "name": "Logic Branch 2",
+        "logic_branch": {
+          "id": 39,
+          "values": [
+            {
+              "id": 40,
+              "value": "false",
+              "action": "DD2"
+            }
+          ],
+          "variable": "{DAMAGE}"
+        }
+      },
+      {
+        "id": 41,
+        "key": "F1",
+        "name": "QC Check Out",
+        "groups": [
+          {
+            "id": 42,
+            "type": "Textbox",
+            "label": "Vehicle Number",
+            "required": true
+          },
+          {
+            "id": 43,
+            "type": "Textbox",
+            "label": "License Number",
+            "required": true
+          },
+          {
+            "id": 44,
+            "type": "Textbox",
+            "label": "Vehicle Type",
+            "required": true
+          },
+          {
+            "id": 45,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 46,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 47,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Headlights",
+            "required": true
+          },
+          {
+            "id": 48,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 49,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 50,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 51,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Clearance Lights",
+            "required": true
+          },
+          {
+            "id": 52,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 53,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 54,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 55,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Box Exterior Front Radius",
+            "required": true
+          },
+          {
+            "id": 56,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 57,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 58,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Box Exterior Galpin Signage",
+            "required": true
+          },
+          {
+            "id": 59,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 60,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 61,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "CA Stickers (109158)",
+            "required": true
+          },
+          {
+            "id": 62,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 63,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 64,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Annual Inspection Sticker (Driver Door)",
+            "required": true
+          },
+          {
+            "id": 65,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 66,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 67,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "License Plate Tag (On Front)",
+            "required": true
+          },
+          {
+            "id": 68,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 69,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 70,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Brake Lights",
+            "required": true
+          },
+          {
+            "id": 71,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 72,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 73,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Back Up Lights",
+            "required": true
+          },
+          {
+            "id": 74,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 75,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 76,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Backup Beeper",
+            "required": true
+          },
+          {
+            "id": 77,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 78,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 79,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Backup Camera",
+            "required": true
+          },
+          {
+            "id": 80,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 81,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 82,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 83,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Trailer Plug Test",
+            "required": true
+          },
+          {
+            "id": 84,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 85,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 86,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Tires Tread Wear",
+            "required": true
+          },
+          {
+            "id": 87,
+            "type": "Textbox",
+            "label": "Tires Tread Wear in MM",
+            "required": true
+          },
+          {
+            "id": 88,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 89,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 90,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Power Points",
+            "required": true
+          },
+          {
+            "id": 91,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 92,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 93,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Horn(s)",
+            "required": true
+          },
+          {
+            "id": 94,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 95,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 96,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Cab Dome Light",
+            "required": true
+          },
+          {
+            "id": 97,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 98,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 99,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Mirrors Glass",
+            "required": true
+          },
+          {
+            "id": 100,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 101,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 102,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 103,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Mirros Power",
+            "required": true
+          },
+          {
+            "id": 104,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 105,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 106,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Radio Working",
+            "required": true
+          },
+          {
+            "id": 107,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 108,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 109,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Windshield",
+            "required": true
+          },
+          {
+            "id": 110,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 111,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 112,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Wipers(Test With Washer)",
+            "required": true
+          },
+          {
+            "id": 113,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 114,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 115,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Service Sticker",
+            "required": true
+          },
+          {
+            "id": 116,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 117,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 118,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Dashboard Controls (Knobs & Switches)",
+            "required": true
+          },
+          {
+            "id": 119,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 120,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 121,
+                "name": "Bad",
+                "title": "Bad"
+              }
+            ],
+            "label": "Seat Belts",
+            "required": true
+          },
+          {
+            "id": 122,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 123,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 124,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 125,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Spare Tire Tools (If Equipped)",
+            "required": true
+          },
+          {
+            "id": 126,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 127,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 128,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 129,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Air Ride Seat(s)",
+            "required": true
+          },
+          {
+            "id": 130,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 131,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 132,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 133,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Wait To Start Sticker (4, 5, 10 Tons)",
+            "required": true
+          },
+          {
+            "id": 134,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 135,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 136,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 137,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Drain Air Tanks Daily Sticker (10 Tons)",
+            "required": true
+          },
+          {
+            "id": 138,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 139,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 140,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 141,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Box Exterior Door Locks",
+            "required": true
+          },
+          {
+            "id": 142,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 143,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 144,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 145,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Jockey Box Doors & Handles",
+            "required": true
+          },
+          {
+            "id": 146,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 147,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 148,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 149,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Steps (Side & Rear)",
+            "required": true
+          },
+          {
+            "id": 150,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 151,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 152,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 153,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Steps Handrail",
+            "required": true
+          },
+          {
+            "id": 154,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 155,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 156,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 157,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Liftgate Operation (From Outside Control)",
+            "required": true
+          },
+          {
+            "id": 158,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 159,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 160,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 161,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Liftgate Operation (From Remote) Remote Condition",
+            "required": true
+          },
+          {
+            "id": 162,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 163,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 164,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 165,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Liftgate Outside Wiring at Motor",
+            "required": true
+          },
+          {
+            "id": 166,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 167,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 168,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 169,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Liftgate Platform Hinge Pins & Bolts",
+            "required": true
+          },
+          {
+            "id": 170,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 171,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 172,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 173,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Box Interior Wall Slats",
+            "required": true
+          },
+          {
+            "id": 174,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 175,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 176,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 177,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Box Interior Roof",
+            "required": true
+          },
+          {
+            "id": 178,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 179,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 180,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 181,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Box Interior 12 Volt Lights & Switches",
+            "required": true
+          },
+          {
+            "id": 182,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 183,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 184,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 185,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Box Interior 120 Volt Wiring & Switches",
+            "required": true
+          },
+          {
+            "id": 186,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 187,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 188,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 189,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Box Interior Solar Controller Charging",
+            "required": true
+          },
+          {
+            "id": 190,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 191,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 192,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 193,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Box Interior Rain Door Shocks",
+            "required": true
+          },
+          {
+            "id": 194,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 195,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 196,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 197,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Camera or Wardrobe AC Remote",
+            "required": true
+          },
+          {
+            "id": 198,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 199,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 200,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 201,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Camera or Wardrobe All 12 Volt Lights",
+            "required": true
+          },
+          {
+            "id": 202,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 203,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 204,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 205,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Wardrobe Cube Curtain (Installed + Clean)",
+            "required": true
+          },
+          {
+            "id": 206,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 207,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 208,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 209,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "120 Volt Electrical Plug Secured (Camera, Wardrobe, 5Ton, 10Ton)",
+            "required": true
+          },
+          {
+            "id": 210,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 211,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 212,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 213,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Stakebed 2 Goal Post Racks",
+            "required": true
+          },
+          {
+            "id": 214,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 215,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 216,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 217,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Stakebed Wood Gate Condition",
+            "required": true
+          },
+          {
+            "id": 218,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 219,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 220,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 221,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Stakebed Gate Latches",
+            "required": true
+          },
+          {
+            "id": 222,
+            "type": "Radio",
+            "items": [
+              {
+                "id": 223,
+                "name": "Good",
+                "title": "Good"
+              },
+              {
+                "id": 224,
+                "name": "Bad",
+                "title": "Bad"
+              },
+              {
+                "id": 225,
+                "name": "N/A",
+                "title": "N/A"
+              }
+            ],
+            "label": "Stakebed Jockey Box Chains (2), Handles, Hinges",
+            "required": true
+          }
+        ],
+        "tab_bar_item": {
+          "id": 226,
+          "url": "",
+          "title": "QC Check Out",
+          "image_name": "formDisabled.png"
+        }
+      },
+      
+      {
+        "id": 227,
+        "key": "E1",
+        "name": "Email Transaction Summary Module",
+        "email": {
+          "id": 228,
+          "label": "Press the Send Email button to send a transaction summary email to the specified recipient(s).",
+          "button": "Send Email",
+          "visible": true,
+          "include_image_inline": true,
+          "send_to_text_default": "{USER}",
+          "include_image_download_link": true,
+          "include_video_download_link": true
+        },
+        "tab_bar_item": {
+          "id": 229,
+          "url": "",
+          "title": "Send Email",
+          "image_name": "emailDisabled.png"
+        }
+      },
+      {
+        "id": 230,
+        "key": "C2",
+        "name": "Complete Module 2",
+        "label": "Client hereby acknowledges that the attached images/video represent the Condition of Property associated with this transaction at the time of exchange indicated above.",
+        "tab_bar_item": {
+          "id": 231,
+          "url": "",
+          "title": "Upload",
+          "image_name": "upload.png"
+        }
+      },
+      {
+        "id": 232,
+        "key": "LB6",
+        "name": "Dynamic Workflow",
+        "logic_branch": {
+          "id": 233,
+          "options": [
+            {
+              "id": "c992b8c1",
+              "label": "QC Check Out",
+              "value": "RC2, LB1, LB2, F1, E1, M1, N2, C2"
+            }
+          ],
+          "variable": "{WORKFLOW_MODULES}"
+        }
+      }
+    ],
+    "force_upload_dialog_visibility": true
   }
 }
